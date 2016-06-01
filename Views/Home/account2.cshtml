@@ -1,0 +1,48 @@
+﻿@model MvcApplication1.Models.City
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!-- registration -->
+
+    <br/><br/>
+    
+    <h3 style="text-align:center"><b>HOTEL INFORMATION</b></h3>
+
+    <br/><br/>
+
+        <form action="/Home/AddHotel/@Model.Id" method="post">
+
+
+                <table style="text-align:center">
+                    <tr>
+                        <td><label>Hotel Name*</label><br /><br /></td>
+                        <td><input type="text" name="hname" id="hname"><br /><br /></td>
+                    </tr>
+                    <tr>
+                        <td><label>Hotel View*</label><br /><br /></td>
+                        <td><input type="text" name="link" id="link"><br /><br /></td>
+                    </tr>
+                    <tr>
+                        <td><label>Hotel Address*</label><br /><br /></td>
+                        <td><input type="text" name="address" id="address"><br /><br /></td>
+                    </tr>
+                    <tr>
+                        <td><label>Hotel Distance*</label><br /><br /></td>
+                        <td><input type="text" name="distance" id="distance"><br /><br /></td>
+                    </tr>
+                    <tr>
+                        <td><label>Hotel Booking Price*</label><br /><br /></td>
+                        <td> <input type="text" name="price" id="price"><br /><br /></td>
+                    </tr>
+  
+                    <tr>
+                        <td colspan="2">
+                            <input type="submit" value="Submit">
+                        </td>
+                        </tr>
+                </table>
+</form>
+<br/><br/>
+    <!-- registration -->
+
+   

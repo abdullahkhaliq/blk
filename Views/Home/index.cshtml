@@ -1,0 +1,310 @@
+﻿@model List<MvcApplication1.Models.City>
+
+@{
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+            <div class="banner-info">
+                <script src="~/Scripts/responsiveslides.min.js"></script>
+                <script>
+                    // You can also use "$(window).load(function() {"
+                    $(function () {
+                        // Slideshow 4
+                        $("#slider3").responsiveSlides({
+                            auto: true,
+                            pager: false,
+                            nav: false,
+                            speed: 500,
+                            namespace: "callbacks",
+                            before: function () {
+                                $('.events').append("<li>before event fired.</li>");
+                            },
+                            after: function () {
+                                $('.events').append("<li>after event fired.</li>");
+                            }
+                        });
+                    });
+                </script>
+                <div id="top" class="callbacks_container">
+                    <ul class="rslides callbacks callbacks1" id="slider3">
+                        <li id="callbacks1_s0" class="callbacks1_on" style="display: block; float: left; position: relative; opacity: 1; z-index: 2; transition: opacity 500ms ease-in-out;">
+                            <div class="banner-text">
+                                <h3>WELCOME</h3>
+                                <h4>EXCELLENT SERVICES WITH BEST PRICE</h4>
+                            </div>
+                        </li>
+                        <li id="callbacks1_s1" class="" style="display: block; float: none; position: absolute; opacity: 0; z-index: 1; transition: opacity 500ms ease-in-out;">
+                            <div class="banner-text">
+                                <h3>WELCOME</h3>
+                                <h4>RELAX AND EXPERIENCE SOMETHING NEW</h4>
+                            </div>
+                        </li>
+                        <li id="callbacks1_s2" class="" style="display: block; float: none; position: absolute; opacity: 0; z-index: 1; transition: opacity 500ms ease-in-out;">
+                            <div class="banner-text">
+                                <h3>WELCOME</h3>
+                                <h4>FIND YOUR IDEAL HOTEL ON BOOK HOTEL</h4>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="banner-bottom">
+                <div class="droop-down">
+
+                    <form action="/Home/search">
+                        <div class="droop">
+                            <div class="sort-by">
+
+                                <select class="sel" id="city" name="city">
+
+                                    @foreach (var v in Model)
+                                    {
+                                        <option value="@v.Name">@v.Name</option>
+                                    }
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="radio-btns">
+                            <div class="swit">
+                                <div class="check_box"> <div class="radio"> <label><input type="radio" name="radio" checked=""><i></i>Daily</label> </div></div>
+                                <div class="check_box"> <div class="radio"> <label><input type="radio" name="radio"><i></i>Hourly</label> </div></div>
+                            </div>
+                        </div>
+                        <div class="search">
+
+                            <input type="submit" value="search">
+
+                        </div>
+                    </form>
+
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //banner -->
+    <!-- banner-pos -->
+    <div class="banner-pos">
+        <div class="container">
+            <div class="banner-pos-grids">
+                <div class="ban-pos-gridone">
+                    <h3>Featured Hotel</h3>
+                    <div class="ban-pos-info l-grids">
+                        <figure class="effect-bubba">
+                            <img src="~/Images/4.jpg" alt="" />
+                            <figcaption>
+                                <h4>BOOK HOTEL</h4>
+
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+                <div class="ban-pos-gridtwo l-grids">
+                    <div class="ban-pos-info l-grids">
+                        <figure class="effect-bubba">
+                            <img src="~/Images/6.jpg" alt="" />
+                            <figcaption>
+                                <h4>BOOK HOTEL</h4>
+
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+                <div class="ban-pos-gridthree l-grids">
+                    <div class="ban-pos-info l-grids">
+                        <figure class="effect-bubba">
+                            <img src="~/Images/5.jpg" alt="" />
+                            <figcaption>
+                                <h4>BOOK HOTEL</h4>
+
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- //welcome -->
+    <!-- facilities -->
+    <div class="facilities">
+        <div class="container">
+            <h3 class="tittle">FACILITIES</h3>
+            <div class="facilities-grids">
+                <div class="col-md-6 facilities-grid">
+                    <img src="~/Images/222.jpg" alt="" />
+                </div>
+                <div class="col-md-6 facilities-grid-left">
+                    <div class="fac-grids">
+                        <div class="facilities-left">
+                            <img src="~/Images/111.jpg" alt="" />
+                        </div>
+                        <div class="facilities-right">
+                            <img src="~/Images/333.jpg" alt="" />
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="fac-rig-btm">
+                        <img src="~/Images/444.jpg" alt="" />
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+    <!-- //facilities -->
+    <!-- services -->
+    <div class="feature-serv">
+        <div class="container">
+            <h3 class="tittle">FEATURED SERVICES</h3>
+            <div class="services-bottom-grids">
+                <div class="col-md-4 services-bottom-grid">
+                    <div class="services-bottom-grd-left wel-grid">
+                        <div class="time-service">
+                            <figure class="icon">
+                                <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="services-bottom-grd-right">
+                        <h4>Hotel Reservation</h4>
+                        <p>You can book hotel of your choice and in your range from our website at your ease.</p>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- //services -->
+    <!-- gallery -->
+    <div class="gallery" id="gallery">
+        <div class="container">
+            <h3 class="tittle">GALLERY</h3>
+            <div class="gallery-bottom">
+                <div class="col-md-4 gal-grid">
+                    <div class="view view-fifth">
+                        <a href="~/Images/aaa.jpg" class="b-link-stripe b-animate-go  thickbox" title="Image Title">
+                            <img src="~/Images/aaa.jpg" alt="" class="img-responsive">
+                            <div class="mask">
+                                <h4>BOOK HOTEL</h4>
+                                <p>A wonderful serenity has taken possession of my entire soul.</p>
+                                <span>More</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4 gal-grid">
+                    <div class="view view-fifth">
+                        <a href="~/Images/bbb.jpg" class="b-link-stripe b-animate-go  thickbox" title="Image Title">
+                            <img src="~/Images/bbb.jpg" alt="" class="img-responsive">
+                            <div class="mask">
+                                <h4>BOOK HOTEL</h4>
+                                <p>A wonderful serenity has taken possession of my entire soul.</p>
+                                <span>More</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4 gal-grid">
+                    <div class="view view-fifth">
+                        <a href="~/Images/ccc.jpg" class="b-link-stripe b-animate-go  thickbox" title="Image Title">
+                            <img src="~/Images/ccc.jpg" alt="" class="img-responsive">
+                            <div class="mask">
+                                <h4>BOOK HOTEL</h4>
+                                <p>A wonderful serenity has taken possession of my entire soul.</p>
+                                <span>More</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4 gal-grid">
+                    <div class="view view-fifth">
+                        <a href="~/Images/ddd.jpg" class="b-link-stripe b-animate-go  thickbox" title="Image Title">
+                            <img src="~/Images/ddd.jpg" alt="" class="img-responsive">
+                            <div class="mask">
+                                <h4>BOOK HOTEL</h4>
+                                <p>A wonderful serenity has taken possession of my entire soul.</p>
+                                <span>More</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4 gal-grid">
+                    <div class="view view-fifth">
+                        <a href="~/Images/eee.jpg" class="b-link-stripe b-animate-go  thickbox" title="Image Title">
+                            <img src="~/Images/eee.jpg" alt="" class="img-responsive">
+                            <div class="mask">
+                                <h4>BOOK HOTEL</h4>
+                                <p>A wonderful serenity has taken possession of my entire soul.</p>
+                                <span>More</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4 gal-grid">
+                    <div class="view view-fifth">
+                        <a href="~/Images/bbb.jpg" class="b-link-stripe b-animate-go  thickbox" title="Image Title">
+                            <img src="~/Images/bbb.jpg" alt="" class="img-responsive">
+                            <div class="mask">
+                                <h4>BOOK HOTEL</h4>
+                                <p>A wonderful serenity has taken possession of my entire soul.</p>
+                                <span>More</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4 gal-grid">
+                    <div class="view view-fifth">
+                        <a href="~/Images/ggg.jpg" class="b-link-stripe b-animate-go  thickbox" title="Image Title">
+                            <img src="~/Images/ggg.jpg" alt="" class="img-responsive">
+                            <div class="mask">
+                                <h4>BOOK HOTEL</h4>
+                                <p>A wonderful serenity has taken possession of my entire soul.</p>
+                                <span>More</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-md-4 gal-grid">
+                    <div class="view view-fifth">
+                        <a href="~/Images/bbb.jpg" class="b-link-stripe b-animate-go  thickbox" title="Image Title">
+                            <img src="~/Images/bbb.jpg" alt="" class="img-responsive">
+                            <div class="mask">
+                                <h4>BOOK HOTEL</h4>
+                                <p>A wonderful serenity has taken possession of my entire soul.</p>
+                                <span>More</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4 gal-grid">
+                    <div class="view view-fifth">
+                        <a href="~/Images/aaa.jpg" class="b-link-stripe b-animate-go  thickbox" title="Image Title">
+                            <img src="~/Images/aaa.jpg" alt="" class="img-responsive">
+                            <div class="mask">
+                                <h4>BOOK HOTEL</h4>
+                                <p>A wonderful serenity has taken possession of my entire soul.</p>
+                                <span>More</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+            <script src="~/Scripts/jquery.chocolat.js"></script>
+
+            <!--light-box-files -->
+            <script type="text/javascript">
+                $(function () {
+                    $('.gallery a').Chocolat();
+                });
+            </script>
+
+        </div>
+    </div>
+    <!-- //gallery -->
+    <!--footer-->
+   

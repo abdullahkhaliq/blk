@@ -1,0 +1,89 @@
+﻿@model MvcApplication1.Models.Hotel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- //banner -->
+<!--about-->
+<div class="booking">
+	<div class="container">
+		<h2 class="tittle-one">BOOKING</h2>
+			<div class="reservation-form">
+				<div class="col-md-3 reservation-left">
+					<h3>Hotels</h3>
+					<ul>
+						<li><a href="/Home/booking"><img src="~/Images/333.jpg" alt="" /></a></li>
+						<li><a href="/Home/booking"><img src="~/Images/555.jpg" alt="" /></a></li>
+						<li><a href="/Home/booking"><img src="~/Images/666.jpg" alt="" /></a></li>
+						<li><a href="/Home/booking"><img src="~/Images/777.jpg" alt="" /></a></li>
+					</ul>
+				</div>
+				<div class="col-md-9 reservation-right">
+                    <form action="/Home/Reserve/@Model.Id" method="post">
+                        <h4>How many members?</h4>
+                        <div class="dropdown-button">
+                            <select class="dropdown" tabindex="10" data-settings='{"wrapperClass":"flat"}' id="capacity" name="capacity">
+                                <option value="1">01 Member</option>
+                                <option value="2">02 Members</option>
+                                <option value="3">03 Members</option>
+                                <option value="4">04 Members</option>
+                                <option value="5">05 Members</option>
+                                <option value="6">06 Members</option>
+                                <option value="7">07 Members</option>
+                                <option value="8">08 Members</option>
+                                <option value="9">09 Members</option>
+                                <option value="9">10 Members</option>
+                                <option value="9">10+ Members</option>
+                            </select>
+                        </div>
+                        <h4>Rooms or Halls</h4>
+                        <div class="dropdown-button">
+                            <select class="dropdown" tabindex="10" data-settings='{"wrapperClass":"flat"}' id="type" name="type">
+                                <option value="Single Room">Single Room</option>
+                                <option value="Double Room">Double Room</option>
+                                <option value="Suite">Suite</option>
+                                <option value="Halls">Halls</option>
+                            </select>
+                        </div>
+                        <h4>When would you like to come?</h4>
+                        <div class="book-pag">
+                            <div class="book-pag-frm">
+                                <label>Select Date :</label>
+                                <input class="date" id="datepicker" name="datepicker" type="text" value="Date" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" required="">
+                            </div>
+                            <div class="book-pag-frm">
+                                <label>Check In :</label>
+                                <input class="date" id="datepicker1" name="datepicker1" type="text" value="Date" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" required="">
+                            </div>
+                            <div class="book-pag-frm">
+                                <label>Check Out:</label>
+                                <input class="date" id="datepicker2" name="datepicker2" type="text" value="Date" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" required="">
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+
+                        <h4>Contact details</h4>
+                        <input type="text" value="Name" id="name" name="name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}" required="">
+                        <input type="text" value="Email" id="email" name="email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required="">
+                        <input type="text" value="Telephone" id="telephone" name="telephone" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Telephone';}" required="">
+                        <textarea name="text" id="text" onfocus="this.value = '' ;" onblur="if (this.value == '') {this.value = 'Message...';}" required=""> Message... </textarea>
+
+                        <input type="submit" class="btn1 btn-1 btn-1e" value="RESERVE NOW" />
+                    </form>
+					
+					<!--strat-date-piker-->
+					
+					<script src="~/Scripts/jquery-ui.js"></script>
+							  <script>
+									  $(function() {
+									    $( "#datepicker,#datepicker1,#datepicker2" ).datepicker();
+									  });
+							  </script>
+					<!--//End-date-piker-->
+				</div>
+				<div class="clearfix"></div>
+			</div>
+	</div>
+</div>
+<!--//about-->
+<!--footer-->
