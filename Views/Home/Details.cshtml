@@ -1,0 +1,77 @@
+﻿@model MvcApplication1.Models.Login
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+    <br /><br />
+
+    <div style="text-align:center">
+
+        <h1><b>BOOKINGS</b></h1><br /><br />
+
+        <table border="1" cellpadding="2" align="center">
+            <tr>
+                <td align="center"><h3><b>Name</b></h3></td>
+                <td align="center"><h3><b>Email</b></h3></td>
+                <td align="center"><h3><b>Contact</b></h3></td>
+                <td align="center"><h3><b>City</b></h3></td>
+                <td align="center"><h3><b>Hotel</b></h3></td>
+                <td align="center"><h3><b>Booking Date</b></h3></td>
+                <td align="center"><h3><b>Reserve Date</b></h3></td>
+                <td align="center"><h3><b>Arrival Date</b></h3></td>
+                <td align="center"><h3><b>Booking Type</b></h3></td>
+                <td align="center"><h3><b>Members</b></h3></td>
+                <td align="center"><h3><b>Cancel</b></h3></td>
+            </tr>
+                    
+                    @for (int j = 0; j < ViewBag.Contact.Count; j++)
+                    { 
+                        for (int k = 0; k < ViewBag.Booking.Count; k++)
+                        {
+                            if (ViewBag.Booking[k].Id == ViewBag.Contact[j].B_Id)
+                            {
+                                for(int l = 0; l < ViewBag.Hotel.Count; l++)
+                                {
+                                    if (ViewBag.Booking[k].H_Id == ViewBag.Hotel[l].Id)
+                                    {
+                                        for(int m = 0; m < ViewBag.City.Count; m++)
+                                        {
+                                            if (ViewBag.Booking[k].C_Id == ViewBag.City[m].Id)
+                                            {
+                                                <tr>
+                                                    <td align="center">@ViewBag.Contact[j].Name</td>
+                                                    <td align="center">@ViewBag.Contact[j].Email</td>
+                                                    <td align="center">@ViewBag.Contact[j].Telephone</td>
+                                                    <td align="center">@ViewBag.City[m].Name</td>
+                                                    <td align="center">@ViewBag.Hotel[l].Name</td>
+                                                    <td align="center">@ViewBag.Booking[k].Booking_Date</td>
+                                                    <td align="center">@ViewBag.Booking[k].CheckIn_Date</td>
+                                                    <td align="center">@ViewBag.Booking[k].CheckOut_Date</td>
+                                                    <td align="center">@ViewBag.Booking[k].Booking_Type</td>
+                                                    <td align="center">@ViewBag.Booking[k].Member_Capacity</td>
+                                                    <td align="center"><a href="/Home/Delete3/@ViewBag.Contact[j].Id">Delete</a></td>
+                                                </tr>
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    
+                    
+                                             
+            
+          
+
+        </table>
+        <br/><br/>
+
+        <form action="/Home/index">
+            <input type="submit" value="Go Back" />
+        </form><br/><br/>
+        </div>
+
+        

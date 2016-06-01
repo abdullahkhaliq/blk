@@ -1,0 +1,51 @@
+﻿@model MvcApplication1.Models.Hotel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <!-- start-header section-->
+    <!-- end-header section-->
+    <!--start-banner-->
+    <!-- registration -->
+    <br /><br />
+
+    <h3 style="text-align:center"><b>HOTEL INFORMATION</b></h3>
+
+    <br /><br />
+
+    <form action="/Home/Update/@Model.Id" method="post">
+
+
+        <table style="text-align:center">
+            <tr>
+                <td><label>Hotel Name*</label><br /><br /></td>
+                <td><input type="text" name="hname" id="hname" value="@Model.Name"><br /><br /></td>
+            </tr>
+            <tr>
+                <td><label>Hotel View*</label><br /><br /></td>
+                <td><input type="text" name="view" id="view" value="@Model.View" /><br /><br /></td>
+            </tr>
+            <tr>
+                <td><label>Hotel Address*</label><br /><br /></td>
+                <td><input type="text" name="address" id="address" value="@Model.Address"><br /><br /></td>
+            </tr>
+            <tr>
+                <td><label>Hotel Distance*</label><br /><br /></td>
+                <td><input type="text" name="distance" id="distance" value="@Model.Distance"><br /><br /></td>
+            </tr>
+            <tr>
+                <td><label>Hotel Booking Price*</label><br /><br /></td>
+                <td> <input type="text" name="price" id="price" value="@Model.Price"><br /><br /></td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <input type="submit" value="Submit">
+                </td>
+            </tr>
+        </table>
+    </form>
+    <br /><br />
+    <!-- registration -->
+
+    

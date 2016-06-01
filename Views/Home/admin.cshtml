@@ -1,0 +1,66 @@
+﻿@model List<MvcApplication1.Models.City>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+    <br/><br/>
+
+    <h1 style="text-align:center;"><b>ADMIN PANEL</b></h1><br /><br/>
+
+    <h1 style="text-align:center">Choose Desired City For Adding Hotel</h1>
+
+    <br /><br/>
+
+    <div style="text-align:center">
+        <form action="/Home/account2">
+
+            <select id="city" name="city" style="max-width:90%;">
+
+                @foreach (var v in Model)
+                {
+                    <option value="@v.Name">@v.Name</option>
+                }
+
+            </select>
+
+            <input type="submit" value="Add" />
+        </form>
+    </div>
+
+    <br /><br />
+
+    <div style="text-align:center">
+        <a href="/Home/Hotels"><h2>Click Here to See Hotels List</h2></a>
+    </div>
+
+    <br /><br/>
+
+    <div style="text-align:center">
+        <a href="/Home/Reserve2"><h2>Click Here To View Booked Hotel List</h2></a>
+    </div>
+    <br /><br />
+
+    <h1 style="text-align:center">View Booked Hotel By City</h1>
+
+    <br /><br />
+
+    <div style="text-align:center">
+        <form action="/Home/account3">
+
+            <select id="city" name="city" style="max-width:90%;">
+
+                @foreach (var v in Model)
+                {
+                    <option value="@v.Name">@v.Name</option>
+                }
+
+            </select>
+
+            <input type="submit" value="View" />
+        </form>
+    </div>
+
+    <br /><br />
+
+    

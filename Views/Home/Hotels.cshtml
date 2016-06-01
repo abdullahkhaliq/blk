@@ -1,0 +1,54 @@
+﻿@model List<MvcApplication1.Models.Hotel>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+    <br/><br/>
+    <div style="text-align:center">
+
+        <h1><b>List of Hotels</b></h1><br/><br/>
+
+        <table border="1" cellpadding="2" align="center">
+            <tr>
+                <td align="center"><h3><b>City Name</b></h3></td>
+                <td align="center"><h3><b>Hotel Name</b></h3></td>
+                <td align="center"><h3><b>Hotel Address</b></h3></td>
+                <td align="center"><h3><b>Hotel Distance</b></h3></td>
+                <td align="center"><h3><b>Hotel Price</b></h3></td>
+                <td align="center"><h3><b>Update Hotel</b></h3></td>
+                <td align="center"><h3><b>Remove Hotel</b></h3></td>
+
+            </tr>
+
+            @foreach (var v in Model)
+            {
+                <tr>
+                    <td>@for (int i = 0; i < ViewBag.x.Count; i++)
+                        {
+                            if (ViewBag.x[i].Id == v.C_Id)
+                            {
+                                @ViewBag.x[i].Name;
+                            }
+                        }
+
+                    </td>
+                    <td align="center">@v.Name</td>
+                    <td align="center">@v.Address</td>
+                    <td align="center">@v.Distance</td>
+                    <td align="center">@v.Price</td>
+                    <td align="center"><a href="/Home/Edit/@v.Id">Edit</a></td>
+                    <td align="center"><a href="/Home/Delete/@v.Id">Delete</a></td>
+                </tr>
+            }
+
+        </table>
+        <br /><br />
+
+        <form action="/Home/admin">
+            <input type="submit" value="Go Back" />
+        </form>
+
+    </div><br/><br/>
+
+    
